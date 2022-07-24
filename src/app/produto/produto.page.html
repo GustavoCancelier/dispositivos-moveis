@@ -1,0 +1,29 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>Produtos</ion-title>
+  </ion-toolbar>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button></ion-back-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+
+  <h1>Produtos</h1>
+  <ion-list>
+    <ion-item *ngFor="let data of produtos" >
+      <ion-label>{{data.nome}}</ion-label>
+      <ion-label>{{data.valor}}</ion-label>
+    </ion-item>
+  </ion-list>
+
+  <ion-card >
+    <h1>Novos contatos</h1>
+    <ion-label>Nome:<ion-input [(ngModel)]="novoProduto.nome"></ion-input></ion-label>
+   <ion-label>Valor:<ion-input [(ngModel)]="novoProduto.valor"></ion-input></ion-label>
+   <ion-button (click)="inserir()">Inserir</ion-button>
+  </ion-card>
+  
+</ion-content>

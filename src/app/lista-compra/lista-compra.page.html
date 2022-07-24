@@ -1,0 +1,41 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>Lista de Compras</ion-title>
+  </ion-toolbar>
+
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button></ion-back-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <h1>Compras</h1>
+  <ion-list>
+    <ion-item *ngFor="let data of compras" >
+      <ion-checkbox class="check"></ion-checkbox>
+      <ion-label>{{data.nome}}</ion-label>      
+      <ion-label>{{data.descricao}}</ion-label>
+    </ion-item>
+
+  </ion-list>
+
+  <ion-card >
+    <h6>Novos produtos a serem adicionados na lista</h6>
+    <ion-item>      
+      <ion-label>Produtos</ion-label>
+      <ion-select  interface="popover" [(ngModel)]="valueSelect" (ionChange)="escolheProduto()" >
+        
+      <ion-select-option   value={{data.nome}} *ngFor='let data of produtos' >
+        <ion-label>Nome: {{data.nome}} </ion-label>  
+        <ion-label> Valor: {{data.valor}} </ion-label> 
+      </ion-select-option>
+        
+        
+      </ion-select>
+    </ion-item>
+    <ion-label>Descrição:<ion-input [(ngModel)]="novaCompra.descricao"></ion-input></ion-label>
+    <ion-button (click)="inserir()">Inserir</ion-button>
+  </ion-card>
+</ion-content>
