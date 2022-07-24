@@ -24,13 +24,12 @@ export class ListaCompraPage implements OnInit {
 
   constructor(public dadosService: DadosService) { }
 
-  //Em ngOnInit são carregados os dados disponíveis em dadosService
+  
   ngOnInit() {
     
     this.produtos=this.dadosService.carregarTodosDados();    
   }
-  //Em inserir() são usados métodos de dadosService para inserção de compromissos
-  // e para carregar todos os compromissos cadastrados
+  
   inserir(){
     this.dadosService.inserirCompra(this.novaCompra.nome,this.novaCompra.descricao)
     this.compras=this.dadosService.carregarTodasCompras();
