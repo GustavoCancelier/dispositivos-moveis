@@ -39,8 +39,7 @@ export class DadosService {
 
   
   inserirDado(nome: string, valor: any): boolean{
-    if(nome){
-      //this.dados[chave]=dado;      
+    if(nome){      
       this.dados.push({nome,valor});
       return true;
     }
